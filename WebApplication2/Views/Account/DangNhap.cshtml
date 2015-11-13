@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "DangNhap";
+}
+
+<link href="@Url.Content("~/Content/styleDangKi.css")" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+
+    function Login() {
+        var validated = true;
+        var txtUserName = document.getElementById("txtUserName");
+        if (txtUserName.value == "" || txtUserName.value == null) {
+            document.getElementById("RequiredUserName").style.display = "block";
+            validated = false;
+
+        }
+
+        var txtPassword = document.getElementById("txtPassword");
+        if (txtPassword.value == "" || txtPassword.value == null) {
+            document.getElementById("RequiredPassword").style.display = "block";
+            validated = false;
+        }
+
+        if (validated == true) {
+            
+            document.submitForm.submit();
+
+        }
+    }
+</script>
+
+
+<div class="BlockContent marginleft">
+    
+    <div class="defaultContent LoginForm-content CreateAccountContainer">
+        <h3>
+            Thông tin tài khoản
+        </h3>
+        <p>
+            Nhập thông tin Email và mật khẩu
+        </p>
+        <div class="FormContainer HorizontalFormContainer NarrowFormContainer">
+            <dl>
+                <form name='submitForm' method='POST' action='../Account/DangNhap'>
+                <dt>
+                    <span class="required">*</span> Tên người dùng:
+                </dt>
+                <dd>
+                    <input name="userName" type="text" id="txtUserName" class="NormalTextBox" style="width:350px;">
+
+                    <span id="RequiredUserName" style="display:none;"><br>Yêu cầu nhập tên tài khoản!</span>
+                    <span id="RegularExpressionUserName" style="display:none;"><br>Địa chỉ Email không hợp lệ!</span>
+                </dd>
+                <dt>
+                    <span class="required">*</span> Mật khẩu:
+                </dt>
+                <dd>
+                    <input name="password" type="password" id="txtPassword" class="NormalTextBox" style="width:200px;">
+                    <span id="RequiredPassword" style="display:none;"><br>Yêu cầu nhập thông tin Mật khẩu!</span>
+                    <span id="RegularExpressionPassword" style="display:none;"><br>Mật khẩu của bạn phải có ít nhất 6 ký tự!</span>
+                </dd>
+                <dt>
+                    <span class="DangNhap" ></span>
+                </dt>
+                <dd>
+                    <input type="button" name=" ctl00$cphmain$ctl00$ctl01$ctl00$btnsubmit" value="Đăng nhập" onclick="Login();" id="cphMain_ctl00_ctl01_ctl00_btnSubmit" class="CreateAccountButton">
+                </dd>
+                </form>
+            </dl>
+           
+        </div>
+        
+
+    </div>
+    <div class="defaultFooter LoginForm-footer"><div></div></div>
+</div>
+
+
+

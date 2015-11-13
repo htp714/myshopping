@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "QuenMatKhau1";
+}
+<link href="@Url.Content("~/Content/account/bootstrap-yii.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/account/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/account/jquery.capsalerttipsy.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/account/screen.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/styleDangKi.css")" rel="stylesheet" type="text/css" />
+<script src="@Url.Content("~/Scripts/account/analytics.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/account/bootstrap.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/account/gtm.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/account/jquery.jccapsalert.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/account/jquery.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/account/jquery.tipsy.js")" type="text/javascript"></script>
+
+<div class="lost-password row-fluid marginleft">
+    <div id="yw1"></div>	<div class="row-fluid">
+        <p class="bluetext">Trợ giúp khôi phục mật khẩu </p>
+        <legend class="legend">Bạn có thể lấy lại mật khẩu bằng những cách sau</legend>
+        <form class="form-lost-password" method="POST">
+            <div id="yw0"></div>
+            <script type="text/javascript">
+                function recoveryOptionSelected() {
+                    var radioOptions =
+                        document.getElementsByName("preoption");
+                    for (var i = 0; i < radioOptions.length; ++i) {
+                        var confirmBox = document.getElementById(
+                            "hideable-box" + radioOptions[i].id);
+                        if (confirmBox) {
+                            if (radioOptions[i].checked == true) {
+                                $("input[type='text']").val('');
+                                confirmBox.style.height = confirmBox.scrollHeight + 'px';
+                            } else {
+                                confirmBox.style.height = '0px';
+                            }
+                        }
+                    }
+                }
+            </script>
+
+            <div class="radio-option">
+                <input id="1" type="radio" onclick="recoveryOptionSelected()" value="1" name="preoption">
+                <label class="radio-label" for="1">Lấy lại mật khẩu bằng email.</label>
+                <div class="hideable-wrapper row-fluid" id="hideable-box1" style="height: 0px;">
+                    <div class="hideable-box">
+                        <p>Để đặt lại mật khẩu của mình, hãy nhập địa chỉ email mà bạn sử dụng để đăng nhập vào hệ thống.</p>
+                        <label>Địa chỉ email</label>
+                        <input id="use_input" class="span4" type="text" name="email" value="" placeholder="Email bạn đã đăng ký">
+                    </div>
+                </div>
+            </div>
+            <div class="radio-option">
+                <input id="2" type="radio" onclick="recoveryOptionSelected()" value="2" name="preoption">
+                <label class="radio-label" for="2">Lấy lại mật khẩu bằng số điện thoại.</label>
+                <div class="hideable-wrapper row-fluid" id="hideable-box2" style="height: 0px;">
+                    <div class="hideable-box">
+                        <p>Để đặt lại mật khẩu của mình, hãy điền số điện thoại mà bạn đã đăng ký.</p>
+                        <label>Số điện thoại</label>
+                        <input id="use_input" class="span4" type="text" name="phone" value="" placeholder="Số điện thoại bạn đã đăng ký">
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button type="submit" class="btn-edits">Tiếp tục</button>
+                <a href="../Home" class="cancels">Hủy bỏ</a>
+            </div>
+        </form>
+        <script type="text/javascript">
+            recoveryOptionSelected();
+        </script>
+    </div><!-- content -->
+    <style type="text/css">
+        .setting .footer {
+            float: none;
+        }
+    </style>
+
+</div>
+

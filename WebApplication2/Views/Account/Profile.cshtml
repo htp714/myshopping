@@ -1,0 +1,113 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<style type="text/css">
+
+    #inforForm {
+        margin-left: 30%;
+      
+    }
+</style>
+
+<div style="width:1170px; margin:0px auto; margin-top:10px;">
+    <link href="@Url.Content("~/Content/styleIndex.css")" rel="stylesheet" type="text/css" />
+   
+        
+        <section>
+            <link href="@Url.Content("~/Content/Css/animate.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/font-awesome.min.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/main.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/prettyPhoto.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/price-range.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/responsive.css")" rel="stylesheet" type="text/css" />
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="left-sidebar">
+                           
+                            <div class="panel-group category-products" id="accordian">
+                                <!--category-productsr-->
+                                <div class="panel panel-default">
+                                    <div class="left">
+                                        <div id="vertical-menu">
+                                            <div class="defaultTitle cate-menu-title">
+                                                <span>Quản lý tài khoản</span>
+                                            </div>
+                                            <div class="defaultContent cate-menu-content">
+                                                <ul>
+
+
+                                                         
+                                                            <li><form name='profileForm' method='POST' action='../account/profile'>                      
+                                                            <a href='javascript:document.profileForm.submit()'> Profile </a>
+                                                            </form></li>
+                                                            
+                                                            <li><form name='historyForm' method='POST' action='../account/history'>                      
+                                                            <a href='javascript:document.historyForm.submit()'> History </a>
+                                                            </form></li>
+                                                    
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div><!--/category-productsr-->
+                        </div>
+                    </div>
+
+                   <div class="Block">
+    <div class="defaultTitle MyAccountTitle ">
+        <h1>
+            Thông tin tài khoản
+        </h1>
+        <br />
+    </div>
+    <div id="inforForm" align="center" class="defaultContent BlockContent MyAccountContent">
+        <br />
+
+        <div align="left" class="FormContainer HorizontalFormContainer NarrowFormContainer">
+            <dl>
+                @{
+                    DataAccess.KhachHangDTO dto = ViewBag.account;
+                    string[] S = { dto.UserName, dto.BirthDay, dto.Phone, dto.Email, dto.Address}; 
+                  }
+                
+                <dt><span class="required">*</span> Account Name: @S[0]</dt>
+             
+                <br />
+                
+                <dt>Ngày sinh: @S[1]</dt>
+                
+                <br />
+               
+                <dt><span class="required">*</span> Điện thoại: @S[2]</dt>
+ 
+                <br />
+
+                    <dt><span class="required">*</span> Address: @S[4]</dt>
+                
+
+                <br />
+
+                <dt><span class="required">*</span> Email: @S[3]</dt>
+                
+                <br />
+
+            </dl>
+
+            <li>@Html.ActionLink("Thay Đổi", "ModifyProfile", "Account")</li>
+        </div>
+       
+    </div>
+
+
+</div>
+                    
+                </div>
+            </div>
+        </section>
+</div>

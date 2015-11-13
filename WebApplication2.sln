@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication2", "WebApplication2\WebApplication2.csproj", "{6272528D-9028-476C-B840-174A77ADBC40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{6B818221-FD81-4CB6-B8CE-321BA240C34F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SendMailCenter", "SendMailCenter\SendMailCenter.csproj", "{4BA85D7E-F6C3-4269-9A69-AF3683212F61}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6272528D-9028-476C-B840-174A77ADBC40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6272528D-9028-476C-B840-174A77ADBC40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6272528D-9028-476C-B840-174A77ADBC40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6272528D-9028-476C-B840-174A77ADBC40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B818221-FD81-4CB6-B8CE-321BA240C34F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B818221-FD81-4CB6-B8CE-321BA240C34F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B818221-FD81-4CB6-B8CE-321BA240C34F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B818221-FD81-4CB6-B8CE-321BA240C34F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BA85D7E-F6C3-4269-9A69-AF3683212F61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BA85D7E-F6C3-4269-9A69-AF3683212F61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BA85D7E-F6C3-4269-9A69-AF3683212F61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BA85D7E-F6C3-4269-9A69-AF3683212F61}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

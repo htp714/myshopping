@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Maid cà phê</title>
+    <link href="@Url.Content("~/Content/StyleLayout.css")" rel="stylesheet" type="text/css" />
+
+</head>
+<body>
+    <!------------------------------------------------------------------------------------------------------->
+    <div class="aspNetHidden">
+        <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+        <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+        <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJOTE0NjEzNTk4ZGSdkqjbtdnF+Hc7uNLPFu+g7ujuzkPkM7tnVCDkBf+B9Q==">
+    </div>
+    <!------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------->
+    <div id="bg_TopMenu">
+        <div class="bg_topmenu">
+            <div id="TopMenu">
+
+                <ul>
+
+                   <li class="First topMenu_Account">
+                                <form name='logoutForm' method='POST' action='../home/index'>
+                                    <input type='hidden' name='userID' value=''>  
+                                    <a href="javascript:document.logoutForm.submit()">
+                                        Đăng Xuất
+                                    </a>
+                                </form>
+                                
+                            </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------------->
+    <div id="bg_Header">
+        <div id="Header">
+            <div id="Logo">
+                <div id="LogoContainer">
+                    <a href="/home/Index">
+                        <img id="imglogo" src='../Source/log.png'>
+                    </a>
+                </div>
+            </div>
+            <div class="Clear"></div>
+        </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------------->
+    <div id="bg_Menu" class="">
+        <div id="Menu">
+            <div id="menu-container">
+                <ul id="nav">
+
+                    
+
+                </ul>
+            </div>
+            <!------------------------------------------------------------------------------------------------------->
+            
+            <br class="Clear">
+        </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------------->
+
+    <div style="width:1170px; margin:0px auto; margin-top:10px;">
+
+        <link href="@Url.Content("~/Content/styleIndex.css")" rel="stylesheet" type="text/css" />
+
+
+        <section>
+            <link href="@Url.Content("~/Content/Css/animate.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/font-awesome.min.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/main.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/prettyPhoto.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/price-range.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/responsive.css")" rel="stylesheet" type="text/css" />
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="left-sidebar">
+
+                            <div class="panel-group category-products" id="accordian">
+                                <!--category-productsr-->
+                                <div class="panel panel-default">
+                                    <div class="left">
+                                        <div id="vertical-menu">
+                                            <div class="defaultTitle cate-menu-title">
+                                                <span>Tài Khoản của tôi</span>
+
+                                                
+                                            </div>
+                                            <div class="defaultContent cate-menu-content">
+                                                <ul>
+                                                    <li>
+                                                        <a href="../Admin/Index">
+                                                            Thông tin chung tài khoản
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="../Admin/QuanLyHoaDon">
+                                                            Quản Lý Đơn Hàng
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="../Admin/ManagerUsers">
+                                                            Quản Lý Người Dùng
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="../Admin/QuanLyKho">
+                                                            Quản Lý kho
+                                                        </a>
+                                                    </li>
+
+                                                    <li>
+                                                        <a href="../Admin/result">
+                                                            Thống kê
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="../Admin/contact">
+                                                            Hỏi đáp
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div><!--/category-productsr-->
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-9 padding-right">
+                        <div class="features_items">
+                            <!--features_items-->
+                            <!--=======================================================================================-->
+                            <div class="Block">
+
+
+                                <!------------------------------------------------------------------------------------------------------->
+                                <div class="RenderBody">
+                                    @RenderBody()
+
+                                </div>
+                                <!------------------------------------------------------------------------------------------------------->
+                            </div>
+
+
+
+
+                        </div><!--features_items-->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------->
+
+
+
+</body>
+</html>
+<!---------------------------->

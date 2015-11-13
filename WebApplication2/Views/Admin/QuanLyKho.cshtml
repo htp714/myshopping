@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "QuanLyKho";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<div class="table-responsive">
+    <a href="~/Admin/AddMatHang">Thêm mới  </a>
+    <table class="table table-striped table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Publisher</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>Category</th>
+                <th>Detail</th>
+                <th>Edit</th>
+                <th>Remove</th>
+            </tr>
+        </thead>
+
+       
+                <tbody>
+            @{
+                foreach(DataAccess.SanPhamDTO sp in ViewBag.products)
+                {
+                 
+                    string editForm  = "editForm"+ sp.ID;
+                    string editFormSubmit = "javascript:document." + editForm + ".submit()";
+                    string removeForm  = "removeForm" + sp.ID;
+                    string removeFormSubmit = "javascript:document." + removeForm + ".submit()";
+                    <tr>
+                        <td>@sp.ID</td>
+                        <td>@sp.Name</td>                    
+                        <td>@sp.Publisher</td>
+                        <td>@sp.Price</td>
+                        <td><img src="@sp.Image" height='100px' width="100px"></td>
+                        <td>@sp.Category</td>
+                        <td>@sp.ExtraInfor</td>
+
+                        <td>
+                        <form name='@editForm' method='POST' action='../admin/addmathang'>
+                             <input type="hidden" name="productID" value="@sp.ID" />
+                            <a href='@editFormSubmit'>Edit</a>
+                        </form>
+                        </td>
+
+                        <td>
+                        <form name='@removeForm' method='POST' action='../admin/quanlykho'>
+                             <input type="hidden" name="removeID" value="@sp.ID" />
+                            <a href='@removeFormSubmit'>Remove</a>
+                        </form>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+      
+        
+
+    </table>
+</div> 

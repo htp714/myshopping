@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "QuenMatKhau2";
+}
+
+<link href="@Url.Content("~/Content/account/bootstrap-yii.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/account/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/account/jquery.capsalerttipsy.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/account/screen.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/styleDangKi.css")" rel="stylesheet" type="text/css" />
+<script src="@Url.Content("~/Scripts/account/analytics.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/account/bootstrap.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/account/gtm.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/account/jquery.jccapsalert.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/account/jquery.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/account/jquery.tipsy.js")" type="text/javascript"></script>
+
+<div class="main-content">
+    <div class="container">
+        <div class="lost-password row-fluid">
+            <div id="yw2"></div>
+            <p class="bluetext">Cập nhật mật khẩu </p>
+            <div style="float: left">
+                <div id="yw0"></div><div class="alert alert-block n-alert">
+                    <h4>Chú ý !</h4>
+                    <p>Sau khi đổi mật khẩu thành công, bạn nên đăng nhập bằng email gắn với tài khoản. </p>
+                </div>
+                <p>Vui lòng đăng nhập vào email <b>@ViewBag.email</b> để lấy mã xác nhận.</p>
+                <form class="form-update-pass form-horizontal" autocomplete="Off" id="changePass-form" action="./Quen-MK2_files/Quen-MK2.html" method="post">
+                    <div style="position:relative ;">
+                        <div class="control-group "><label class="control-label required" for="LostPassForm_code">Mã xác nhận <span class="required">*</span></label><div class="controls"><input data-scenario="verify" maxlength="255" placeholder="Mã xác nhận đã gửi vào email của bạn" data-content="Vui lòng kiểm tra email ><b>ldinhtrieu@gmail.com</b> để lấy mã xác nhận." data-placement="right" data-trigger="focus" data-toggle="popover" data-html="1" name="LostPassForm[code]" id="LostPassForm_code" type="text" data-original-title=""></div></div>
+                    </div>
+                    <div class="controls send-to-code">
+                        <a rel="captchaEmail" class="resend-code-link" href="./">Chưa nhận được mã ?</a>
+                        <a rel="captchaEmail" id="cancels" href="../Home/DangNhap">Đóng lại</a>
+                    </div>
+                    <div class="control-group" id="send-to-captcha" style="display:none">
+                        <div class="controls phone-captcha">
+
+                            <div class="big-captcha-wrapper captcha-wrapper row-fluid">
+                                <div class="captcha-image span5"><img id="yw1" src="../account/XacNhan" alt=""></div>
+                                <div class="captcha-input span7">
+                                    <input data-scenario="resend_lost_password_code" name="LostPassForm[captcha]" id="LostPassForm_captcha" type="text">		<a class="captcha-refresh-button" href="" title="Lấy code mới"><i class="icon-refresh"></i></a>
+
+                                </div>
+                                <button name="btnResendCode" value="lostpassword" class="btn-edit btn-resend-sms">Gửi lại mã</button>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="scenario" name="__scenario">
+                    <div style="position: relative;" class="id_event">
+                        <div class="control-group "><label class="control-label required" for="LostPassForm_newPassword">Mật khẩu mới <span class="required">*</span></label><div class="controls"><input data-scenario="verify" class="vn_alpha" maxlength="255" placeholder="Mật khẩu mới" data-content="Sau khi thay đổi mật khẩu bạn nên đăng nhập bằng email ><b>ldinhtrieu@gmail.com</b>" data-placement="right" data-trigger="focus" data-toggle="popover" data-html="1" name="LostPassForm[newPassword]" id="LostPassForm_newPassword" type="password" data-original-title=""></div></div>
+                        <div id="vnalpha" style="display: none;">
+                            <div class="vnalpha-arrow vnalpha-arrow-w"></div>
+                            <div class="vnalpha-inner">Mật khẩu không được gõ dấu.</div>
+                        </div>
+                    </div>
+                    <div style="position: relative;">
+                        <div class="control-group "><label class="control-label required" for="LostPassForm_confirmed_password">Xác nhận Mật khẩu <span class="required">*</span></label><div class="controls"><input data-scenario="verify" maxlength="255" placeholder="Xác nhận mật khẩu mới" data-content="Sau khi thay đổi mật khẩu bạn nên đăng nhập bằng email ><b>ldinhtrieu@gmail.com</b>" data-placement="right" data-trigger="focus" data-toggle="popover" data-html="1" name="LostPassForm[confirmed_password]" id="LostPassForm_confirmed_password" type="password" data-original-title=""></div></div>
+                    </div>
+                    <div class="controls">
+                        <button type="submit" class="btn-edits">Cập nhật</button>
+                        <a href="../Home/DangNhap" class="cancels">Hủy bỏ</a>
+                    </div>
+
+                </form>
+            </div>
+            <script language="JavaScript">
+                jQuery(function ($) {
+                    $('#LostPassForm_newPassword').popover('hide');
+                    $('#LostPassForm_confirmed_password').popover('hide');
+                    $('#LostPassForm_code').popover('hide');
+                    $('.resend-code-link').click(function (e) {
+                        $('#send-to-captcha').show();
+                        $('.resend-code-link').hide();
+                        $('#LostPassForm_captcha').val('');
+                        $('#cancels').show();
+                        return false;
+                    });
+                    $('#cancels').click(function (e) {
+                        $('#send-to-captcha').hide();
+                        $('.resend-code-link').show();
+                        $('#cancels').hide();
+                        return false;
+                    });
+                    $('#changePass-form input[type=text]').focus(function (e) {
+                        $('#scenario').val($(this).attr('data-scenario'));
+                    });
+                });
+            </script>
+        </div><!-- content -->
+        <style type="text/css">
+            .setting .footer {
+                float: none;
+            }
+        </style>
+
+    </div>
+</div>
+

@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<div class="Block">
+    <div class="defaultTitle MyAccountTitle ">
+        <h1>
+            Thông tin tài khoản
+        </h1>
+        <br />
+    </div>
+    <div class="defaultContent BlockContent MyAccountContent">
+        <br />
+
+        <div class="FormContainer HorizontalFormContainer NarrowFormContainer">
+            <dl>
+                @{
+                    DataAccess.KhachHangDTO dto = ViewBag.account;
+                    string[] S = { dto.UserName, dto.BirthDay, dto.Phone, dto.Email, dto.Address}; 
+                  }
+                
+                <dt><span class="required">*</span> Account Name: @S[0]</dt>
+                <dd>
+                    
+                </dd>
+                <br />
+                
+                <dt>Ngày sinh: @S[1]</dt>
+                
+                <br />
+               
+                <dt><span class="required">*</span> Điện thoại: @S[2]</dt>
+                <dd>
+                    
+                </dd>
+                <br />
+                <dt><span class="required">*</span> Email: @S[3]</dt>
+                
+                <br />
+                
+                 </dd>
+                <br />
+                <dt><span class="required">*</span> Address: @S[4]</dt>
+                
+                <br />
+            </dl>
+
+            <li>@Html.ActionLink("Thay Đổi", "ThayDoiThongTinTaiKhoan", "Admin")</li>
+        </div>
+       
+    </div>
+
+
+</div>
+

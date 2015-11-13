@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "ChiTiet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+   DataAccess.SanPhamDTO sp = ViewBag.product;
+}
+ <!--=======================================================================================-->
+<style type="text/css">
+
+    #container {
+        margin-left:20%;
+        margin-right:20%;
+float:left;
+    }
+
+    #comment {
+        margin-left:20%;
+        margin-right:20%;
+        float:left;
+    }
+
+    #productInfor {
+        float:left;
+    }
+
+#productDescription {
+        float:left;
+        margin-left:10px;
+    }
+
+</style>
+
+<link href="@Url.Content("~/Content/ChiTiet.css")" rel="stylesheet" type="text/css" />
+ <link href="@Url.Content("~/Content/styleIndex.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/Css/animate.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/font-awesome.min.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/main.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/prettyPhoto.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/price-range.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/responsive.css")" rel="stylesheet" type="text/css" />
+
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '1089809117747698',
+            xfbml: true,
+            version: 'v2.3'
+        });
+    };
+
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.3&appId=1089809117747698";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div id="fb-root"></div>
+
+
+<div id="container">
+
+    <div id ="productInfor" class="product-image-wrapper">
+        <div class="single-products">
+            <div class="productinfo text-center">
+                <img src="@sp.Image" alt="">
+                <h2>@sp.Price </h2>
+                <p>@sp.Name</p>
+                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+            </div>
+           <div class="product-overlay">
+                <div class="overlay-content">
+                    <img src="@sp.Image" alt="">
+                    <h2>@sp.Price </h2>
+                    <p>@sp.Name</p>
+                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+
+            <div class="ffggg" id="productDescription">
+                <div class="ChiTiet"><a><span>Chi tiết</span></a></div>
+                <p>
+                    @sp.ExtraInfor  
+                </p>
+            </div>
+        
+</div>
+<!--=======================================================================================-->
+
+<!--=======================================================================================-->
+@{string s = "http://localhost:1893/home/chitiet?productID="+ sp.ID;}
+<div id="comment" ><div class="fb-comments" data-href="@s" data-numposts="2"></div></div>

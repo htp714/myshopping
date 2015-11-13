@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "XacNhan";
+}
+
+<link href="@Url.Content("~/Content/account/bootstrap-yii.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/account/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/account/jquery.capsalerttipsy.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/account/screen.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/styleDangKi.css")" rel="stylesheet" type="text/css" />
+<script src="@Url.Content("~/Scripts/account/analytics.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/account/bootstrap.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/account/gtm.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/account/jquery.jccapsalert.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/account/jquery.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/account/jquery.tipsy.js")" type="text/javascript"></script>
+<div class="marginleft">
+    <div class="lost-password row-fluid">
+        <div id="yw0"></div>	<span>
+            <p style="margin-top: 20px"> Bạn vừa thay đổi mật khẩu tại <b>ID.vatgia.com</b>.</p>
+            <p>Mật khẩu cũ của bạn tại các website thuộc hệ thống <a class="tooltip-list-site" rel="tooltip" data-original-title="Vatgia.com, Baokim.vn, Mytour.vn, 123doc.org, Webbnc.net">ID.vatgia.com</a> đã thay đổi. Vui lòng ghi nhớ mật khẩu mới để sử dụng lần sau.</p>
+        </span>
+        <label class="label_info"><b>Thông tin tài khoản:</b></label>
+        <div class="row-fluid info_acc">
+            <label>Họ và tên:</label>
+            <span>@ViewBag.HoTen</span>
+        </div>
+        <div class="row-fluid info_acc">
+            <label>Email:</label>
+            <span>@ViewBag.Email</span>
+        </div>
+        <div class="bt-next">
+            <a class="btn-edit" href="../Home/DangNhap">Đồng ý</a>
+        </div>
+    </div>
+</div>
+

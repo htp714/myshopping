@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "ThayDoiThongTinTaiKhoan";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<script type="text/javascript">
+
+    function Update() {
+        var validated = true;
+      
+        if (validated == true) {
+            
+            document.submitForm.submit();
+
+        }
+    }
+</script>
+
+
+<div class="Block">
+    <div class="defaultTitle MyAccountTitle ">
+        <h1>
+            Thông tin tài khoản
+        </h1>
+        <br />
+    </div>
+    <div class="defaultContent BlockContent MyAccountContent">
+        <br />
+
+        <div class="FormContainer HorizontalFormContainer NarrowFormContainer">
+            <dl>
+                 @{
+                    DataAccess.KhachHangDTO dto = ViewBag.account;
+                    string[] S = { dto.UserName, dto.BirthDay, dto.Phone, dto.Email , dto.Address}; 
+                  }
+                <form name='submitForm' method='POST' action='../admin/index'>
+                    <dt><span class="required">*</span> Account Name: @S[0]</dt>
+                    <dd>
+                    
+                    </dd>
+                    <br />
+                    <dt>Ngày sinh:</dt>
+                    <dd>
+                        <input  name="newBirthDay" type="text" class="TextInput hasDatepicker" style="width: 100px;" value="@S[1]"><img class="ui-datepicker-trigger" alt="..." title="...">&nbsp;
+                    </dd>
+                    <br />
+                    <dt><span class="required">*</span> Điện thoại:</dt>
+                    <dd>
+                        <input name="newPhoneNo" type="text" class="NormalTextBox" style="width:200px;" value="@S[2]">
+                        <span style="display:none;">Yêu cầu nhập thông tin Điện thoại liên hệ</span>
+                    </dd>
+                    <br />
+                    <dt><span class="required">*</span> Email:</dt>
+                    <dd>
+                        <input name="newEmail" type="text" class=" NormalTextBox" style="width:350px;" value="@S[3]">
+                    </dd>
+                    <br />
+                
+                     <dt><span class="required">*</span> Address:</dt>
+                    <dd>
+                        <input name="newAddress" type="text" class=" NormalTextBox" style="width:350px;" value="@S[4]">
+                    </dd>
+                    <br />                
+
+                    <dt>&nbsp;</dt>
+                    <dd>
+                        <input type="button" value="Cập nhật" onclick="Update();" id="cphMain_ctl00_ctl01_ctl00_btnUpdate" class="CreateAccountButton">
+                   
+                    </dd>
+                </form>
+            </dl>
+        </div>
+        <br />
+        <h2>
+            Thay đổi mật khẩu
+        </h2>
+        <div class="FormContainer HorizontalFormContainer NarrowFormContainer">
+            <dl>
+                <dt>Mật khẩu:</dt>
+                <dd>
+                    <input type="password" class="NormalTextBox" style="width:200px;">
+                </dd>
+                <br />
+                <dt>Nhập lại mật khẩu:</dt>
+                <dd>
+                    <input type="password" iclass="NormalTextBox" style="width:200px;">
+                    <span style="display:none;">Mật khẩu xác nhận không đúng!</span>
+                </dd>
+                <br />
+                <dt>&nbsp;</dt>
+                <dd>
+                    <input type="submit" value="Đổi mật khẩu" onclick="Update();" id="cphMain_ctl00_ctl01_ctl00_btnUpdatePassword" class="CreateAccountButton">
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+
+</div>
+
+
+

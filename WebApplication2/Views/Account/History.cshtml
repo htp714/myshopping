@@ -1,0 +1,102 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<style type="text/css">
+
+    #inforForm {
+        align-content: center;
+    }
+</style>
+
+<div style="width:1170px; margin:0px auto; margin-top:10px;">
+    <link href="@Url.Content("~/Content/styleIndex.css")" rel="stylesheet" type="text/css" />
+   
+        
+        <section>
+            <link href="@Url.Content("~/Content/Css/animate.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/font-awesome.min.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/main.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/prettyPhoto.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/price-range.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/responsive.css")" rel="stylesheet" type="text/css" />
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="left-sidebar">
+                           
+                            <div class="panel-group category-products" id="accordian">
+                                <!--category-productsr-->
+                                <div class="panel panel-default">
+                                    <div class="left">
+                                        <div id="vertical-menu">
+                                            <div class="defaultTitle cate-menu-title">
+                                                <span>Quản lý tài khoản</span>
+                                            </div>
+                                            <div class="defaultContent cate-menu-content">
+                                                <ul>
+
+
+                                                         
+                                                            <li><form name='profileForm' method='POST' action='../account/profile'>                      
+                                                            <a href='javascript:document.profileForm.submit()'> Profile </a>
+                                                            </form></li>
+                                                            
+                                                            <li><form name='historyForm' method='POST' action='../account/history'>                      
+                                                            <a href='javascript:document.historyForm.submit()'> History </a>
+                                                            </form></li>
+                                                    
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div><!--/category-productsr-->
+                        </div>
+                    </div>
+
+                     <div class="table-responsive cart_info">
+            <table class="table table-condensed" >
+                <thead>
+                    <tr class="cart_menu">
+                        <td class="image">Tiền giao dịch</td>
+                        <td class="description">Thời gian</td>
+                        <td class="price">Xác nhận hàng</td>                
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    @{
+                        foreach(DataAccess.BillDTO bill in ViewBag.bills)
+                        {
+                            
+                            <tr>
+                                <td class="cart_product">
+                                   <p>@bill.Price</p>
+                                </td>
+                                <td class="cart_description">
+                                    
+                                    <p>@bill.Date</p>
+                                </td>
+                                <td class="cart_price">
+                                    <p>@bill.Validated</p>
+                                </td>
+                               
+                            </tr>
+                        
+                        
+                        }
+                    }
+                </tbody>
+            </table>
+           
+        </div>
+                    
+                </div>
+            </div>
+        </section>
+</div>

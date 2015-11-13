@@ -1,0 +1,161 @@
+
+.marginleft
+{
+    margin-left: 30%;
+}
+
+/*defaultTitle*/
+#___plusone_0 {
+    float: left !important;
+}
+
+.defaultTitle span {
+    display: block;
+    display: inline-block;
+    border-bottom: 1px solid #f4a137;
+    margin-bottom: -1px;
+}
+
+.defaultTitle h1 {
+    display: block;
+    display: inline-block;
+    border-bottom: 1px solid #f4a137;
+    margin-bottom: -1px;
+    font-size: 100%;
+    line-height: 35px;
+}
+
+.defaultTitle {
+    color: #444444;
+    font-family: Open Sans, serif !important;
+    line-height: 35px;
+    height: 35px;
+    font-weight: 600;
+    font-size: 133%;
+    text-transform: uppercase;
+    border-bottom: 1px solid #ddd;
+}
+
+#CartHeader {
+    height: 50px;
+    line-height: 50px;
+}
+
+#CartHeader h2 {
+    color: #666;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.center .defaultTitle.TitleContent {
+    display: none;
+}
+
+.DefaultModule.contact .defaultTitle {
+    display: none;
+}
+
+.contact-title h2 {
+    margin-top: 12px;
+}
+
+.center .defaultTitle {
+    font-size: 13px;
+    font-weight: bold;
+    font-size: 133%;
+    margin-bottom: 10px;
+}
+
+#tabs_container .defaultTitle {
+    line-height: 35px;
+}
+
+.defaultContent {
+}
+
+.defaultContent.SideTopSeller-content {
+    padding: 0px;
+}
+
+.center .defaultContent.TextHTML-content {
+    padding: 0px;
+}
+
+.defaultFooter {
+    height: 6px;
+}
+
+.defaultFooter div {
+    height: 6px;
+}
+
+.defaultContent {
+    color: #3B3B3B;
+}
+
+.DefaultModule {
+    margin-bottom: 7px;
+}
+/*End defaultTitle*/
+.defaultContent.LoginForm-content .HorizontalFormContainer dd {
+    margin-left: 120px;
+}
+
+.defaultContent.LoginForm-content .HorizontalFormContainer dd:last-child a {
+    color: #F4A137;
+}
+
+.FormAccountLogin {
+   /* text-align: center;*/
+}
+
+.defaultContent.LoginForm-content {
+    padding: 10px !important;
+    text-align: initial;
+}
+
+.defaultContent.CreateAccountContainer h3 {
+    color: #333333;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: initial;
+    padding: 8px 0;
+}
+
+.defaultContent.LoginForm-content .NormalTextBox {
+    width: 240px !important;
+    height: 30px;
+    box-sizing: border-box;
+    border: 1px solid #d4d4d4;
+    margin-top : 10px;
+    
+}
+
+.defaultContent.BlockContent.MyAccountContent .FormContainer dl input {
+    height: 27px;
+    box-sizing: border-box;
+    font-size: 13px;
+}
+
+.defaultContent.BlockContent.MyAccountContent .FormContainer dt {
+    color: #333333;
+    margin: 0 10px 0 0;
+    padding-top: 9px;
+    width: 115px;
+}
+.FormContainer.HorizontalFormContainer.NarrowFormContainer.PL20 dd input[type="submit"] {
+    margin-left: 0;
+    margin-top: 20px;
+}
+
+.ProductOptionList .required {
+    color: red;
+}
+
+.HorizontalFormContainer dt {
+    clear: left;
+    float: left;
+    margin-right: 4px;
+    padding-top: 11px;
+    text-align: left;
+    width: 140px;

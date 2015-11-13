@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>H-Shoping</title>
+    <link href="@Url.Content("~/Content/StyleLayout.css")" rel="stylesheet" type="text/css" />
+    
+<style type="text/css">
+
+    #comboCategory {
+        width: 100px;
+    }
+
+    .searchOption {
+             width: 30px;
+    }
+
+    #bg_Menu {
+        height: 80px;
+    }
+
+     #Menu {
+        height: 80px;
+    }
+    
+</style>
+
+</head>
+<body>
+    <!------------------------------------------------------------------------------------------------------->
+    <div class="aspNetHidden">
+        <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+        <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+        <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJOTE0NjEzNTk4ZGSdkqjbtdnF+Hc7uNLPFu+g7ujuzkPkM7tnVCDkBf+B9Q==">
+    </div>
+    <!------------------------------------------------------------------------------------------------------->
+    <!------------------------------------------------------------------------------------------------------->
+    <div id="bg_TopMenu">
+        <div class="bg_topmenu">
+            <div id="TopMenu">
+
+                <ul>
+
+                    @{
+                        if(ViewBag.userID != "")
+                        {
+                            <li class="First topMenu_Account">
+                                <a href="/account/profile">
+                                    Tài khoản của tôi
+                                </a>
+                            </li>
+                         
+                             <li class="First topMenu_Account">
+                                <form name='logoutForm' method='POST' action='../home/index'>
+                                    <input type='hidden' name='userID' value=''>  
+                                    <a href="javascript:document.logoutForm.submit()">
+                                        Đăng Xuất
+                                    </a>
+                                </form>
+                                
+                            </li>
+
+                            <li class="CartLink topMenu_Cart">
+                                <a href="../Account/GioHang">
+                                    Giỏ hàng
+                                    <img  src="../Source/shopping-cart-page.gif" width="50px"/>
+                                    <span id="pInTop"></span>
+                                </a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="topMenu_Login">
+                                <a href="../Account/DangNhap">
+                                    Đăng nhập
+                                </a>
+                            </li>
+                            <li class="topMenu_Register">
+                                <a href="../Account/DangKi">
+                                    Đăng ký
+                                </a>
+                            </li>
+                        }   
+                        
+                    }
+                    
+                    
+                    
+
+                    
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------------->
+    <div id="bg_Header">
+        <div id="Header">
+            <div id="Logo">
+                <div id="LogoContainer">
+                    <form name='homeForm' method='POST' action='../home/index'>
+                        <input type='hidden' name='category' value='0'>  
+                        <input type='hidden' name='searchText' value=''> 
+                        <input type='hidden' name='searchBy' value=''> 
+                        <input type='hidden' name='searchOption' value=''> 
+                        <a href='javascript:document.homeForm.submit()'>
+                            <img id="imglogo" src='../Source/log.png'>
+                        </a>
+                    </form>
+                </div>
+            </div>
+            <div class="Clear"></div>
+        </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------------->
+    <div id="bg_Menu" class="">
+        <div id="Menu">
+            <div id="menu-container">
+                <ul id="nav">
+
+                    <li id="nav-1" class="level0 nav-1 first current parent" onmouseover="toggleMenu(1, -1, 1)" onmouseout="toggleMenu(1, -1, 0)" style="z-index:2000;">
+                        <a href="/home/Index">
+                            <span>Trang chủ</span>
+                        </a>
+
+                    </li>
+
+                    
+
+                    
+                    
+
+                    
+
+                    <li id="nav-6" class="level0 nav-6 parent" onmouseover="toggleMenu(6, -1, 1)" onmouseout="toggleMenu(6, -1, 0)" style="z-index:2000;">
+                        <a href="/home/contact">
+                            <span>Liên hệ</span>
+                        </a>
+
+                    </li>
+
+                </ul>
+            </div>
+            <!------------------------------------------------------------------------------------------------------->
+            <div id="SearchForm">
+
+                 <form name='searchForm' method='POST' action='../home/index'>
+                    <div class="search" id="searchSpace">
+                        <input id="searchText" name="searchText" type="text" />
+                        <select name="searchBy" id ="comboCategory">
+                          <option  value="name">Tên sản Phẩm</option>
+                          <option value="publisher">Nhà sản xuất</option>
+                        </select>
+                        <input id="searchButton" type="button" value="Tìm kiếm" onclick="javascript: document.searchForm.submit();"/>
+                        <br />
+                        <input checked="checked" name="searchOption" class="searchOption" type="radio" value="Allword" />AllWord
+    
+                        <input name="searchOption" class="searchOption" type="radio" value="Anyword" />AnyWord
+                    </div>
+                </form>
+            </div>
+            <br class="Clear">
+        </div>
+    </div>
+    <!------------------------------------------------------------------------------------------------------->
+
+    <div style="width:1170px; margin:0px auto; margin-top:10px;">
+    </div>
+    <!------------------------------------------------------------------------------------------------------->
+    <div class="RenderBody">
+        @RenderBody()
+
+    </div>
+    <!------------------------------------------------------------------------------------------------------->
+    
+
+
+
+    <!------------------------------------------------------------------------------------------------------->
+
+    
+
+</body>
+</html>

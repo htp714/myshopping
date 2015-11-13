@@ -1,0 +1,153 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<style type="text/css">
+
+    .col-sm-4 {
+        width : 400px;
+        height: 500px;
+    }
+
+</style>
+
+<div style="width:1170px; margin:0px auto; margin-top:10px;">
+    <link href="@Url.Content("~/Content/styleIndex.css")" rel="stylesheet" type="text/css" />
+   
+        
+        <section>
+            <link href="@Url.Content("~/Content/Css/animate.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/font-awesome.min.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/main.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/prettyPhoto.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/price-range.css")" rel="stylesheet" type="text/css" />
+            <link href="@Url.Content("~/Content/Css/responsive.css")" rel="stylesheet" type="text/css" />
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="left-sidebar">
+                           
+                            <div class="panel-group category-products" id="accordian">
+                                <!--category-productsr-->
+                                <div class="panel panel-default">
+                                    <div class="left">
+                                        <div id="vertical-menu">
+                                            <div class="defaultTitle cate-menu-title">
+                                                <span>Danh mục sản phẩm</span>
+                                            </div>
+                                            <div class="defaultContent cate-menu-content">
+                                                <ul>
+
+
+                                                    @{
+                                                        
+                                                        foreach (DataAccess.CategoryDTO category in @ViewBag.Category)
+                                                        {
+                                                           string s = "shopCategory" + category.ID;
+                                                           string s1 = "javascript:document." + s + ".submit()";
+                                                            <li><form name='@s' method='POST' action='../home/index'>
+                                                            <input type='hidden' name='category' value='@category.ID'>                        
+                                                            <a href='@s1'> @category.Name </a>
+                                                            </form></li>
+                                                            
+
+                                                        }
+                                                    }
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div><!--/category-productsr-->
+
+
+
+
+
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-9 padding-right">
+                        <div class="features_items">
+                            <!--features_items-->
+                        <!--=======================================================================================-->
+                        @{
+
+                            foreach (DataAccess.SanPhamDTO stemp in ViewBag.SanPham)
+                            {
+                                string s = "shopProductCart" + stemp.ID;
+                                string s1 = "javascript:document." + s + ".submit()";
+
+                                string shopProductInfor = "shopProductInfor" + stemp.ID;
+                                string shopProductInforSubmit = "javascript:document." + shopProductInfor + ".submit()";
+
+                                <div  class="col-sm-4">
+                                    <div class="product-image-wrapper">
+                                        <div class="single-products">
+                                            <div class="productinfo text-center">
+
+                                                <li><form name='@shopProductInfor' method='POST' action='../home/chitiet'>
+                                                <input type='hidden' name='productID' value='@stemp.ID'>      
+                                                <img src="@stemp.Image" alt="" onclick="@shopProductInforSubmit">                  
+                                                </form></li>
+
+                                            
+                                                <h2>@stemp.Price VND </h2>
+                                                <p>@stemp.Name</p>
+                                            
+                                                <li><form name='@s' method='POST' action='../Account/GioHang'>
+                                                <input type='hidden' name='productID' value='@stemp.ID'>                        
+                                                <a href='@s1' class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                </form></li>
+                                            
+                                            </div>
+                                     
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                            
+                        <!--lặp lại-->    
+                        <!--=======================================================================================-->
+
+                        </div><!--features_items-->
+                        
+                            <ul class="pagination">
+                            
+                               
+                                @{
+                                    for(int i = 1; i <= ViewBag.Pages; i++)
+                                    {
+                                           string s = "pageForm" + i;
+                                           string s1 = "javascript:document." + s + ".submit()";
+                                        if (i == ViewBag.Page)
+                                        {
+                                            <li class='active'><a href=''>@i</a></li>
+                                        }
+                                        else
+                                        {
+                                        
+                                            <li> 
+                                                <form name='@s' method='POST' action='../home/index'>
+                                                    <input type='hidden' name='page' value='@i'>  
+                                                    <a href='@s1'>@i</a>
+                                                </form>
+                                            </li>  
+                
+                                        }
+                                    }
+                                }
+                              
+                            </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+</div>

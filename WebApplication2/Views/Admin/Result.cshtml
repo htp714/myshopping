@@ -1,0 +1,124 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<link href="@Url.Content("~/Content/style.css")" rel="stylesheet" type="text/css" />
+
+<div class="Block">
+    <div class="defaultTitle MyAccountTitle ">
+        <h1>
+            Thống kê theo từng tháng
+        </h1>
+        <br />
+    </div>
+    <div class="defaultContent BlockContent MyAccountContent">
+        <br />
+
+        <div class="main">
+        <div class="main-inner">
+            <div class="container">
+                <div class="row">
+                    <div class="span6">
+                        <div class="widget">
+                            <div class="widget-header">
+                                <i class="icon-bar-chart"></i>
+                                <h3>
+                                    Bar Chart</h3>
+                            </div>
+                            <!-- /widget-header -->
+                            <div class="widget-content">
+                                <canvas id="bar-chart" class="chart-holder" width="538" height="250">
+                                </canvas>
+                                <!-- /bar-chart -->
+                            </div>
+                            <!-- /widget-content -->
+                        </div>
+                        <!-- /widget -->
+                        <div class="widget">
+                            <div class="widget-header">
+                                <i class="icon-bar-chart"></i>
+                                <h3>
+                                    Line Chart</h3>
+                            </div>
+                            <!-- /widget-header -->
+                            <div class="widget-content">
+                                <canvas id="area-chart" class="chart-holder" width="538" height="250">
+                                </canvas>
+                                <!-- /line-chart -->
+                            </div>
+                            <!-- /widget-content -->
+                        </div>
+
+                    </div>
+
+
+				</div>
+                        <!-- /widget -->
+                    
+                    <!-- /span6 -->
+                
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </div>
+        <!-- /main-inner -->
+    </div>
+
+    
+    @{
+        int[] rs = ViewBag.result;
+}
+    
+  
+    
+    <script src="@Url.Content("~/Content/js/chart.min.js")" type="text/javascript"></script>
+    
+    <script>
+
+
+
+        var lineChartData = {
+            labels: ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"],
+            datasets: [
+				{
+				    fillColor: "rgba(151,187,205,0.5)",
+				    strokeColor: "rgba(151,187,205,1)",
+				    pointColor: "rgba(151,187,205,1)",
+				    pointStrokeColor: "#fff",
+				    data: ["@rs[0]", "@rs[1]", "@rs[2]", "@rs[3]", "@rs[4]", "@rs[5]", "@rs[6]", "@rs[7]", "@rs[8]", "@rs[9]", "@rs[10]", "@rs[11]"]
+				}
+            ]
+
+        }
+
+        var myLine = new Chart(document.getElementById("area-chart").getContext("2d")).Line(lineChartData);
+
+
+        var barChartData = {
+            labels: ["Tháng 1", "Tháng 2", "Tháng 3", "Tháng 4", "Tháng 5", "Tháng6", "Tháng 7", "Tháng 8", "Tháng 9", "Tháng 10", "Tháng 11", "Tháng 12"],
+            datasets: [
+
+				{
+				    fillColor: "rgba(151,187,205,0.5)",
+				    strokeColor: "rgba(151,187,205,1)",
+				    data: ["@rs[0]", "@rs[1]", "@rs[2]", "@rs[3]", "@rs[4]", "@rs[5]", "@rs[6]", "@rs[7]", "@rs[8]", "@rs[9]", "@rs[10]", "@rs[11]"]
+				}
+            ]
+
+        }
+
+        var myLine = new Chart(document.getElementById("bar-chart").getContext("2d")).Bar(barChartData);
+
+
+
+
+
+	</script>
+       
+    </div>
+
+
+</div>
+

@@ -1,0 +1,204 @@
+﻿@{
+    ViewBag.Title = "information";
+}
+
+<link href="@Url.Content("~/Content/styleDangKi.css")" rel="stylesheet" type="text/css" />
+
+<div style="width:1170px; margin:0px auto; margin-top:10px;">
+    <link href="@Url.Content("~/Content/styleIndex.css")" rel="stylesheet" type="text/css" />
+
+
+    <section>
+        <link href="@Url.Content("~/Content/Css/animate.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/Css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/Css/font-awesome.min.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/Css/main.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/Css/prettyPhoto.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/Css/price-range.css")" rel="stylesheet" type="text/css" />
+        <link href="@Url.Content("~/Content/Css/responsive.css")" rel="stylesheet" type="text/css" />
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="left-sidebar">
+
+                        <div class="panel-group category-products" id="accordian">
+                            <!--category-productsr-->
+                            <div class="panel panel-default">
+                                <div class="left">
+                                    <div id="vertical-menu">
+                                        <div class="defaultTitle cate-menu-title">
+                                            <span>Tài Khoản của tôi</span>
+
+                                            <div class="left">
+                                                <a href="../account/" title="Lê Triệu">
+                                                   
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="defaultContent cate-menu-content">
+                                            <ul>
+                                                        <li>
+                                                            <a href="../account/information">
+                                                                Thông tin chung tài khoản
+                                                            </a>
+                                                        </li>
+
+                                                <li>
+                                                    <a href="../account/">
+                                                        Thông báo của tôi
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="../account/DonHang">
+                                                        Đơn hàng của tôi
+                                                    </a>
+                                                </li>
+
+                                                <li>
+                                                    <a href="../account/index">
+                                                        Hỏi đáp
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><!--/category-productsr-->
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+
+                <div class="col-sm-9 padding-right">
+                    <div class="features_items">
+                        <!--features_items-->
+                        <!--=======================================================================================-->
+                        <div class="Block">
+                            <div class="defaultTitle MyAccountTitle ">
+                                <h1>
+                                    Thông tin tài khoản
+                                </h1>
+                                <br />
+                            </div>
+                            <div class="defaultContent BlockContent MyAccountContent">
+                                <br />
+                                
+                                <div class="FormContainer HorizontalFormContainer NarrowFormContainer">
+                                    <dl>
+
+                                        <dt><span class="required">*</span> Họ đệm:</dt>
+                                        <dd>
+                                            <input type="text" class="NormalTextBox" style="width:200px;">
+                                            <span style="display:none;">Yêu cầu nhập thông tin Họ đệm</span>
+                                        </dd>
+                                        <br />
+                                        <dt><span class="required">*</span> Tên:</dt>
+                                        <dd>
+                                            <input type="text" class="NormalTextBox" style="width:200px;">
+                                            <span style="display:none;">Yêu cầu nhập thông tin Tên</span>
+                                        </dd>
+                                        <br />
+                                        <dt>Ngày sinh:</dt>
+                                        <dd>
+                                            <input type="text" class="TextInput hasDatepicker" style="width: 100px;" value="01/01/1990"><img class="ui-datepicker-trigger" alt="..." title="...">&nbsp;
+                                        </dd>
+                                        <br />
+                                        <dt>Công ty:</dt>
+                                        <dd>
+                                            <input type="text" class="NormalTextBox" style="width:350px;">
+                                        </dd>
+                                        <br />
+                                        <dt><span class="required">*</span> Điện thoại:</dt>
+                                        <dd>
+                                            <input type="text" class="NormalTextBox" style="width:200px;">
+                                            <span style="display:none;">Yêu cầu nhập thông tin Điện thoại liên hệ</span>
+                                        </dd>
+                                        <br />
+                                        <dt><span class="required">*</span> Email:</dt>
+                                        <dd>
+                                            <input type="text" class=" NormalTextBox" style="width:350px;">
+                                        </dd>
+                                        <br />
+                                        <dt>Yahoo:</dt>
+                                        <dd>
+                                            <input type="text" class="NormalTextBox" style="width:350px;">
+                                        </dd>
+                                        <br />
+                                        <dt>Skype:</dt>
+                                        <dd>
+                                            <input type="text" class="NormalTextBox" style="width:350px;">
+                                        </dd>
+                                        <br />
+                                        <dt>Gtalk:</dt>
+                                        <dd>
+                                            <input type="text" class="NormalTextBox" style="width:350px;">
+                                        </dd>
+                                        <br />
+                                        <dt>Facebook:</dt>
+                                        <dd>
+                                            <input type="text" class="NormalTextBox" style="width:350px;">
+                                        </dd>
+                                        <br />
+                                        <dt>&nbsp;</dt>
+                                        <dd>
+                                            <input type="submit" value="Cập nhật" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$cphMain$ctl00$ctl01$ctl00$btnUpdate&quot;, &quot;&quot;, true, &quot;UpdateBasicInfo&quot;, &quot;&quot;, false, false))" id="cphMain_ctl00_ctl01_ctl00_btnUpdate" class="CreateAccountButton">
+                                            <input type="submit" value="Quay lại" id="cphMain_ctl00_ctl01_ctl00_btnBack" class="CreateAccountButton">
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <br />
+                                <h2>
+                                    Thay đổi mật khẩu
+                                </h2>
+                                <div class="FormContainer HorizontalFormContainer NarrowFormContainer">
+                                    <dl>
+                                        <dt>Mật khẩu:</dt>
+                                        <dd>
+                                            <input type="password" class="NormalTextBox" style="width:200px;">
+                                        </dd>
+                                        <br />
+                                        <dt>Nhập lại mật khẩu:</dt>
+                                        <dd>
+                                            <input type="password" iclass="NormalTextBox" style="width:200px;">
+                                            <span style="display:none;">Mật khẩu xác nhận không đúng!</span>
+                                        </dd>
+                                        <br />
+                                        <dt>&nbsp;</dt>
+                                        <dd>
+                                            <input type="submit" value="Đổi mật khẩu" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$cphMain$ctl00$ctl01$ctl00$btnUpdatePassword&quot;, &quot;&quot;, true, &quot;&quot;, &quot;&quot;, false, false))" id="cphMain_ctl00_ctl01_ctl00_btnUpdatePassword" class="CreateAccountButton">
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <!--lặp lại-->
+                        <!--=======================================================================================-->
+
+                       
+                    </div><!--features_items-->
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+<!--///////////////////////////////////////////////////-->
+          
+
+
+

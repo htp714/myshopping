@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewBag.Title = "AddMatHang";
+    Layout = "~/Views/Shared/LayoutAdmin.cshtml";
+    DataAccess.SanPhamDTO dto = ViewBag.product;
+}
+
+<script type="text/javascript">
+
+    function Submit() {
+        var validated = true;
+      
+        if (validated == true) {
+            
+            document.submitForm.submit();
+
+        }
+    }
+</script>
+
+
+<div class="Block">
+    <form name='submitForm' method='POST' action='../admin/quanlykho'  enctype="multipart/form-data">
+    <input name="productID" type="hidden" value="@dto.ID" />
+    <!------------------------------------------------------------------------>
+    <tr>
+        <td class="key">
+            Tên sản phẩm &nbsp;<span class="Required">*</span>
+        </td>
+        <td>
+            <input name="productName" type="text" maxlength="500" value="@dto.Name" id="cph_Main_ctl00_ctl00_txtName" class="TextInput" style="width:400px;">
+        </td>
+    </tr>
+    <br />
+    <!------------------------------------------------------------------------>
+
+    <!------------------------------------------------------------------------>
+    <tr>
+        <td class="key">
+            Loại Sản Phẩm &nbsp;<span class="Required">*</span>
+        </td>
+        <td>
+            <select name="productCategory" id ="comboCategory" style="width:200px;">
+                @{
+                    foreach(DataAccess.CategoryDTO catdto in @ViewBag.category)
+                    {
+                      <option  value='@catdto.ID'>@catdto.Name</option>
+                     }
+                  }
+            </select>
+       
+        </td>
+    </tr>
+    <br />
+    <!------------------------------------------------------------------------>
+
+    <!------------------------------------------------------------------------>
+    <tr>
+        <td class="key">
+            Nhà sản xuất &nbsp;<span class="Required">*</span>
+        </td>
+        <td>
+            
+            <input name="productPublisher" type="text" maxlength="500" value="@dto.Publisher" id="cph_Main_ctl00_ctl00_txtName" class="TextInput" style="width:400px;">
+        </td>
+    </tr>
+    <br />
+    <!------------------------------------------------------------------------>
+
+    <!------------------------------------------------------------------------>
+    <tr>
+        <td class="key">
+            Đơn Giá &nbsp;<span class="Required">*</span>
+        </td>
+        <td>
+            <input name="productPrice" type="text" maxlength="500" value="@dto.Price" id="cph_Main_ctl00_ctl00_txtName" class="TextInput" style="width:400px;">
+        </td>
+    </tr>
+    <br />
+    <!------------------------------------------------------------------------>
+    <!------------------------------------------------------------------------>
+    <tr>
+        <td class="key">
+            Thông tin thêm &nbsp;<span class="Required">*</span>
+        </td>
+        <td>
+            <input name="productExtraInfor" type="text" maxlength="500" value="@dto.ExtraInfor" id="cph_Main_ctl00_ctl00_txtName" class="TextInput" style="width:400px;">
+        </td>
+    </tr>
+    <br />
+    <!------------------------------------------------------------------------>
+    <div class="contentupload">
+        Tải Ảnh Lên &nbsp;<span class="Required">*</span>
+        <div class="k-button k-upload-button">
+            <input type="file"   name="imageFile" >
+           
+        </div>
+    </div>
+
+    <!------------------------------------------------------------------------>
+    <div class="contentupload">
+        <div class="k-button k-upload-button">
+            <input type="button" value="Submit" onclick="Submit();">
+           
+        </div>
+    </div>
+    </form>
+</div>

@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "GioHang";
+}
+
+<link href="@Url.Content("~/Content/Css/animate.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/Css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/Css/font-awesome.min.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/Css/main.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/Css/prettyPhoto.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/Css/price-range.css")" rel="stylesheet" type="text/css" />
+<link href="@Url.Content("~/Content/Css/responsive.css")" rel="stylesheet" type="text/css" />
+<section id="cart_items">
+    <div class="container">
+
+        <div class="table-responsive cart_info">
+            <table class="table table-condensed" >
+                <thead>
+                    <tr class="cart_menu">
+                        <td class="image">Item</td>
+                        <td class="description"></td>
+                        <td class="price">Price</td>
+                        <td class="quantity">Quantity</td>
+                        <td class="total">Total</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        int i = -1;
+                        int totalPrice= 0;
+                        foreach (DataAccess.TradeDTO trade in ViewBag.cart)
+                        { 
+                            i++;
+                            string quantityForm = "quantityForm" + i;
+                            string quantityFormSubmit = "javascript:document." + quantityForm + ".submit()";
+                            string deleteForm = "deleteForm" + i;
+                            string deleteFormSubmit = "javascript:document." + deleteForm + ".submit()";
+                            DataAccess.SanPhamDTO sanPham = DataAccess.SanPhamDAO.GetProductByID(trade.ProductID);
+                            totalPrice += trade.TotalPrice;
+                            <tr>
+                                <td class="cart_product">
+                                    <a href=""><img src="@sanPham.Image" alt=""></a>
+                                </td>
+                                <td class="cart_description">
+                                    <h4><a href="">@sanPham.Name</a></h4>
+                                    <p>Web ID: 1089772</p>
+                                </td>
+                                <td class="cart_price">
+                                    <p>@sanPham.Price VND</p>
+                                </td>
+                                <td class="cart_quantity">
+                                    <div class="cart_quantity_button">
+                                        <form name='@quantityForm' method='POST' action='../Account/GioHang'>
+                                        <input type='hidden' name='changeIndex' value='@i'>   
+                                        <input class="cart_quantity_input" type="text" name="quantity" value='@trade.Quantity' autocomplete="off" size="2" onchange="@quantityFormSubmit">
+                                       </form>
+                                    </div>
+                                </td>
+                                <td class="cart_total">
+                                    <p class="cart_total_price">@trade.TotalPrice</p>
+                                </td>
+                                <td class="cart_delete">
+                                    <form name='@deleteForm' method='POST' action='../Account/GioHang'>
+                                    <input type='hidden' name='deleteIndex' value='@i'> 
+                                    <a class="cart_quantity_delete" href="@deleteFormSubmit"><i class="fa fa-times"></i></a>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                        
+                    }
+                    
+                </tbody>
+            </table>
+
+            @{
+                    
+                   string strhref =  "https://www.nganluong.vn/button_payment.php?receiver=shudanti@gmail.com&product_name=Gói hàng&price=" + totalPrice + "&return_url=(URL thanh toán thành công)&comments=";
+            }
+            <div align="center">
+	            <a class="btn btn-default check_out" href="home/index">Continue Shopping</a>
+                <a target="_blank" href="@strhref" ><img src="https://www.nganluong.vn/data/images/buttons/3.gif"  border="0" /></a> 
+            </div>
+        </div>
+    </div>
+</section>
