@@ -164,9 +164,15 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Content Include="Source\404.png" />
     <Content Include="Source\log.png" />
-    <Content Include="Source\products\product7.jpg" />
-    <Content Include="Source\products\product8.jpg" />
-    <Content Include="Source\products\product9.jpg" />
+    <Content Include="Source\products\product7.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Source\products\product8.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Source\products\product9.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Source\shopping-cart-page.gif" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
