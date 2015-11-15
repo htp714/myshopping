@@ -225,7 +225,6 @@
     <Content Include="Views\Error\NotFound.cshtml" />
     <None Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\TradeSuccess.cshtml" />
-    <Content Include="Views\Home\Error.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
