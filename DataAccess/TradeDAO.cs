@@ -16,7 +16,7 @@ namespace DataAccess
         {
             List<TradeDTO> rs = new List<TradeDTO>();
 
-            string query = "select * from shop.trade where AccountID like '" +id+ "'";
+            string query = "select * from db3c04c35a9c6b45918ba3a551005e16ee.trade where AccountID like '" +id+ "'";
 
             DataTable dt = DataProvider.ExecuteQuery(query);
 
@@ -37,7 +37,7 @@ namespace DataAccess
         public static void SaveBill(BillDTO dto)
         {
            
-            string query = "insert into shop.bill "
+            string query = "insert into db3c04c35a9c6b45918ba3a551005e16ee.bill "
                             + "value ('" + dto.AccountID + "','" + dto.Price + "','" + dto.Date  + "','" + dto.Validated + "')";
 
             if (DataProvider.ExecuteNonQuery(query))
@@ -54,7 +54,7 @@ namespace DataAccess
         {
             List<BillDTO> kq = new List<BillDTO>();
 
-            string query = "select * from shop.bill where AccountID like '" + ID + "'";
+            string query = "select * from db3c04c35a9c6b45918ba3a551005e16ee.bill where AccountID like '" + ID + "'";
 
             DataTable dt = DataProvider.ExecuteQuery(query);
 
@@ -78,7 +78,7 @@ namespace DataAccess
         {
             List<BillDTO> kq = new List<BillDTO>();
 
-            string query = "select * from shop.bill";
+            string query = "select * from db3c04c35a9c6b45918ba3a551005e16ee.bill";
 
             DataTable dt = DataProvider.ExecuteQuery(query);
 
@@ -102,7 +102,7 @@ namespace DataAccess
             int[] rs = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
            
 
-            string query = "select * from shop.bill";
+            string query = "select * from db3c04c35a9c6b45918ba3a551005e16ee.bill";
 
             DataTable dt = DataProvider.ExecuteQuery(query);
 

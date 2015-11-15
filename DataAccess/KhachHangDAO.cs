@@ -12,7 +12,7 @@ namespace DataAccess
         public static string Register(KhachHangDTO dto)
         {
             string id = NextAccountID();
-            string query = "insert into shop.account "
+            string query = "insert into db3c04c35a9c6b45918ba3a551005e16ee.account "
                             + "value ('" + id + "','" + dto.UserName + "','" + dto.Password + "','" + dto.BirthDay + "','" + dto.Sex + "','" + dto.Email + "','" + dto.Phone + "','" + dto.Address + "','" + dto.Type + "','" + dto.Status +"')";
 
             if (DataProvider.ExecuteNonQuery(query))
@@ -28,7 +28,7 @@ namespace DataAccess
         private static string NextAccountID()
         {
             int maxid = 1;
-            string query = "select * from shop.account ";
+            string query = "select * from db3c04c35a9c6b45918ba3a551005e16ee.account ";
 
             DataTable dt = DataProvider.ExecuteQuery(query);
 
@@ -55,7 +55,7 @@ namespace DataAccess
         {
             string rs = "";
 
-            string query = "select * from shop.account "
+            string query = "select * from db3c04c35a9c6b45918ba3a551005e16ee.account "
                             + "where UserName like '" + userName + "' and Password like '" + password + "'";
 
             DataTable dt = DataProvider.ExecuteQuery(query);
@@ -79,7 +79,7 @@ namespace DataAccess
         {
             KhachHangDTO cs = new KhachHangDTO();
 
-            string query = "select * from shop.account where ID like '" + id + "'";
+            string query = "select * from db3c04c35a9c6b45918ba3a551005e16ee.account where ID like '" + id + "'";
 
             DataTable dt = DataProvider.ExecuteQuery(query);
 
@@ -107,7 +107,7 @@ namespace DataAccess
 
         public static void Update(string id, string colname, object value)
         {
-            string query = "update  shop.account set " + colname + " = '" + value + "' where ID like '" + id + "'";
+            string query = "update  db3c04c35a9c6b45918ba3a551005e16ee.account set " + colname + " = '" + value + "' where ID like '" + id + "'";
                             
 
             DataProvider.ExecuteNonQuery(query);
@@ -118,7 +118,7 @@ namespace DataAccess
         {
             List<KhachHangDTO> rs = new List<KhachHangDTO>();
 
-            string query = "select * from shop.account";
+            string query = "select * from db3c04c35a9c6b45918ba3a551005e16ee.account";
 
             DataTable dt = DataProvider.ExecuteQuery(query);
 

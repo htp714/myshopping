@@ -12,7 +12,7 @@ namespace DataAccess
         {
             List<SanPhamDTO> rs = new List<SanPhamDTO>();
 
-            string query = "select * from shop.product";
+            string query = "select * from db3c04c35a9c6b45918ba3a551005e16ee.product";
 
             DataTable dt = DataProvider.ExecuteQuery(query);
 
@@ -39,7 +39,7 @@ namespace DataAccess
         {
             SanPhamDTO rs = new SanPhamDTO();
 
-            string query = "select * from shop.product where ID like '" + id + "'";
+            string query = "select * from db3c04c35a9c6b45918ba3a551005e16ee.product where ID like '" + id + "'";
 
             DataTable dt = DataProvider.ExecuteQuery(query);
 
@@ -66,7 +66,7 @@ namespace DataAccess
         {
             List<CategoryDTO> rs = new List<CategoryDTO>();
 
-            string query = "select * from shop.category";
+            string query = "select * from db3c04c35a9c6b45918ba3a551005e16ee.category";
 
             DataTable dt = DataProvider.ExecuteQuery(query);
 
@@ -90,7 +90,7 @@ namespace DataAccess
         {
             List<SanPhamDTO> rs = new List<SanPhamDTO>();
 
-            string query = "select * from shop.product "
+            string query = "select * from db3c04c35a9c6b45918ba3a551005e16ee.product "
                 + "where Category like " + categoryID;
 
             DataTable dt = DataProvider.ExecuteQuery(query);
@@ -119,7 +119,7 @@ namespace DataAccess
         internal static int GetPrice(string ProductID)
         {
             int rs = 0;
-            string query = "select * from shop.product where ID like '" + ProductID + "'";
+            string query = "select * from db3c04c35a9c6b45918ba3a551005e16ee.product where ID like '" + ProductID + "'";
 
             DataTable dt = DataProvider.ExecuteQuery(query);
 
@@ -140,7 +140,7 @@ namespace DataAccess
         public static void Remove(string id)
         {
             ;
-            string query = "delete  from shop.product where ID like '" + id + "'" ;
+            string query = "delete  from db3c04c35a9c6b45918ba3a551005e16ee.product where ID like '" + id + "'" ;
 
             DataProvider.ExecuteNonQuery(query);
         }
@@ -149,7 +149,7 @@ namespace DataAccess
         private static string NextProductID()
         {
             int maxid = 1;
-            string query = "select * from shop.product ";
+            string query = "select * from db3c04c35a9c6b45918ba3a551005e16ee.product ";
 
             DataTable dt = DataProvider.ExecuteQuery(query);
 
@@ -175,7 +175,7 @@ namespace DataAccess
         public static string AddProduct(SanPhamDTO dto)
         {
             string id = NextProductID();
-            string query = "insert into shop.product "
+            string query = "insert into db3c04c35a9c6b45918ba3a551005e16ee.product "
                             + "value ('" + id + "','" + dto.Name + "','" + dto.Publisher + "','" + dto.Price + "','" + dto.Image + "','" + dto.ExtraInfor + "','" + dto.Category +"')";
 
             if (DataProvider.ExecuteNonQuery(query))
@@ -190,7 +190,7 @@ namespace DataAccess
 
         public static void Update(string id, string colname, object value)
         {
-            string query = "update  shop.product set " + colname + " = '" + value + "' where ID like '" + id + "'";
+            string query = "update  db3c04c35a9c6b45918ba3a551005e16ee.product set " + colname + " = '" + value + "' where ID like '" + id + "'";
 
 
             DataProvider.ExecuteNonQuery(query);
