@@ -13,6 +13,7 @@ namespace WebApplication2.Controllers
         public ViewResult Index()
         {
             return View("NotFound");
+
         }
         public ViewResult NotFound()
         {
